@@ -1,0 +1,44 @@
+<div *ngIf="selectedRecipe">
+  <div *ngIf="editing else not_editing">
+    <button (click)="doneEditing()">Save</button>
+
+    <button (click)="triggerDeletion()">Delete</button>
+
+    <input [(ngModel)]="selectedRecipe.name">
+
+    <h2>Ingredients</h2>
+    <button (click)="selectedRecipe.add_blank_ingredient()">Add Ingredient</button>
+    <ul>
+      <li *ngFor="let ingredient of selectedRecipe.ingredients">
+        <input [(ngModel)]="ingredient.name" placeholder="Ingredient Name">
+        <input [(ngModel)]="ingredient.quantity" placeholder="Ingredient Quantity">
+      </li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <button (click)="selectedRecipe.add_blank_instruction()">Add Instruction</button>
+    <ul>
+      <li *ngFor="let instruction of selectedRecipe.instructions; let i = index;">
+        <input [(ngModel)]="selectedRecipe.instructions[i]">
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #not_editing>
+    <button (click)="edit()">Edit</button>
+  
+    <h2>Ingredients</h2>
+    <ul>
+      <li *ngFor="let ingredient of selectedRecipe.ingredients">
+        {{ingredient.name}}, {{ingredient.quantity}}
+      </li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <ul>
+      <li *ngFor="let instruction of selectedRecipe.instructions">
+        {{instruction}}
+      </li>
+    </ul>
+  </ng-template>
+</div>

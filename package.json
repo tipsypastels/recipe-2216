@@ -20,7 +20,11 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "@types/jest": "^22.2.3",
     "core-js": "^2.5.4",
+    "jest": "^22.4.3",
+    "jest-preset-angular": "^5.2.2",
+    "jest-zone-patch": "0.0.8",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

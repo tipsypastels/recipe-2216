@@ -1,0 +1,7 @@
+<ul class="menu">
+  <li (click)="onAdd()" style="font-weight: bold">New Recipe</li>
+  <li *ngFor="let recipe of recipes" (click)="onSelect(recipe)" [class.selected]="recipe === selectedRecipe">{{recipe.name}}</li>
+</ul>
+
+
+<app-recipe-detail [selectedRecipe]="selectedRecipe" (onDelete)="onDelete($event)"></app-recipe-detail>

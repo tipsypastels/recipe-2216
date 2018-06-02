@@ -1,0 +1,17 @@
+ul.menu {
+  padding: 0;
+  list-style-type: none;
+  width: max-content;
+}
+
+ul.menu li {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+ul.menu li.selected {
+  background-color: #eee;
+  border-bottom-color: #bbb;
+}
